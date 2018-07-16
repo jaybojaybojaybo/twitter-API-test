@@ -2,7 +2,7 @@
   "name": "twitterapi",
   "version": "1.0.0",
   "description": "twitter api for nodejs",
-  "main": "search.js",
+  "main": "search-promise.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node search.js"
@@ -10,7 +10,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "request": "^2.87.0",
     "twit": "^2.2.11"
   }
 }

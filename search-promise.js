@@ -7,8 +7,10 @@ var T = new Twit(config);
 var params = {
     f: 'users',
     q: 'portland',
-    count: '1'
+    count: '20'
 }
+
+var pages = 6; //set pages to increase amount of results received by increments of 20
 
 function searchedData(err, data, response) {
     return data;
@@ -28,8 +30,17 @@ twitters = function (params) {
     )
 }
 
-console.log('third');
+let multiDataLists = [];
 
-twitters(params).then((result) => {
-    console.log(result);
-});
+(async function loop() {
+    multiDataLists;
+    for(let i = 1; i <= pages; i++){
+        params.page = i;
+        await twitters(params).then((result) => {
+            multiDataLists.push(result);
+        });
+    }
+    console.log(multiDataLists.length);
+})();
+
+console.log('third');
